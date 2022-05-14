@@ -55,7 +55,7 @@ https://{{$localeConfig.brandName}}.cm/pricing (opens new window).
 | User Management    | Developer | Developer Pro | Enterprise  |
 | -------------- | --------- | ---------- | ---------- |
 | Log Retention                 | Up to 3 Days  | Up to 10 Days  | Up to 30 Days |
-| User Management Dashboard     | Includedd     | Included       | Included      |
+| User Management Dashboard     | Included     | Included       | Included      |
 | Role and Access Management    | Included      | Included       | Included      |
 | Delegated Admin               | /             | Included       | Included      |
 
@@ -70,21 +70,21 @@ https://{{$localeConfig.brandName}}.cm/pricing (opens new window).
 
 | Enterprise Customization   | Developer | Developer Pro | Enterprise  |
 | -------------------------- | -------- | -------------------------- | ------------- |
-| Customizable sign-in widgets, domains and email templates | Includedd     | Includedd   | Includedd   |
-| Email Customizations                                      | Includedd     | Includedd   | Includedd   |
-| Private Cloud Service (annual contract required)          | /         | 可加购（38,199 人民币/年）    | 已包括        |
-| Workforce Single Sign-On Integration                      | /         | Includedd                     | Includedd     |
-| Custom Development Support Engineer                       | /         | 799 RMB/人时                  | 高级版的 8 折 |
-| Single Sign On Launchpad                                  | /         | /                             | Includedd     |
+| Customizable sign-in widgets, domains and email templates | Included     | Included   | Included   |
+| Email Customizations                                      | Included     | Included   | Included   |
+| Private Cloud Service (annual contract required)          | /         | Additional purchase (38199 yuan / year)    | Included        |
+| Workforce Single Sign-On Integration                      | /         | Included                     | Included     |
+| Custom Development Support Engineer                       | /         | 799 RMB/man-hour                  | 20% off Premium Edition |
+| Single Sign On Launchpad                                  | /         | /                             | Included     |
 
 #### Enterprise Support
 
-| 企业支持服务       | Developer | Developer Pro | Enterprise  |
+| Enterprise support services       | Developer | Developer Pro | Enterprise  |
 | ------------------ | ------------------- | ------------------ | ------------------- |
 | Customer Support              | Working days          | Working days          | 24*7      |
 | Support Availability          | Response in 24 Hours  | Response in 1 Hour    | Response in 30 Minutes |
 | SLA                           |                       | 99.90%                | 99.99%           |
-| Training / Support Engineer   | /                     | 699 RMB/人时          | 高级版的 8 折       |
+| Training / Support Engineer   | /                     | 699 RMB/man-hour          | 20% off Premium Edition       |
 | Phone / Meeting Support       | /                     | /                     | Includedd                |
 | Customer Support Manager      | /                     | /                     | Includedd                |
 
