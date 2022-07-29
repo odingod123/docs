@@ -151,52 +151,17 @@ https://example.com/#id_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI1Y
 
 你可以从 `url hash` 中取出 `id_token`，然后可以通过解码 `id_token` 获取用户信息，详情请见[验证用户身份凭证（token）](/guides/faqs/how-to-validate-user-token.md)。
 
-#### 使用 trackSession
+#### 使用 Authing SPA SDK
 
 Authing 提供另外一种简单的前端获取用户信息的方式，无需处理回调或进行其他配置。
 
-1. 安装[单点登录 SDK](/reference/sdk-for-sso.md)，完成初始化，调用 `trackSession` 函数获取用户登录状态。
-
-使用 NPM 安装
-
-```
-$ npm install @authing/sso --save
-```
-
-使用 CDN
-
-```html
-<script src="https://cdn.authing.co/packages/authing-sso/2.1.17-alpha.5/umd/index.min.js"></script>
-```
-
-2. 初始化 SDK
-
-```javascript
-const authingSSO = new AuthingSSO.AuthingSSO({
-  appId: '应用 ID',
-  origin: 'https://{用户池域名}.authing.cn',
-  redirectUri: '你的业务软件路由地址',
-})
-```
-
-3. 调用 `trackSession` 函数获取用户登录状态
-
-```javascript
-const res = await authing.trackSession();
-if (res.session) {
-  // 已登录
-} else {
-  // 未登录
-}
-```
-
-详细使用方式请查看[文档](/reference/sdk-for-sso.md)。
+详细使用方式请查看 [单点登录（SSO）](/reference/sdk-for-sso-spa.md)。
 
 :::
 
 ## 访问个人中心
 
-在 {{$localeConfig.brandName}} 中创建的每个应用都有一个内置的给终端用户的个人中心页，<span v-pre>地址为 `{{YOUR_APP_DOMAIN}}/u`</span>，如 `https://sample-app.authing.cn/u`，你可以通过浏览器直接访问该地址：
+在 {{$localeConfig.brandName}} 中创建的每个应用都有一个内置的给终端用户的个人中心页，<span v-pre>地址为 `{YOUR_APP_DOMAIN}/u`</span>，如 `https://sample-app.authing.cn/u`，你可以通过浏览器直接访问该地址：
 
 ![](./images/personal-central.png)
 
@@ -204,7 +169,7 @@ if (res.session) {
 
 ## 使用登录组件
 
-上述流程中，我们使用的是 {{$localeConfig.brandName}} 运维的托管登录页面。同时我们还提供支持各种主流 Web 框架的[登录组件](/reference/guard/)，相比在线的登录页，登录组件更加灵活、自定义能力更强，你可以将其集成到的自己的页面中，详细流程请见[使用内嵌登录组件完成认证](/guides/basics/authenticate-first-user/use-embeded-login-component/)。
+上述流程中，我们使用的是 {{$localeConfig.brandName}} 运维的托管登录页面。同时我们还提供支持各种主流 Web 框架的[登录组件](/reference/guard/v2/)，相比在线的登录页，登录组件更加灵活、自定义能力更强，你可以将其集成到的自己的页面中，详细流程请见[使用内嵌登录组件完成认证](/guides/basics/authenticate-first-user/use-embeded-login-component/)。
 
 ## 使用 API & SDK
 

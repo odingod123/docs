@@ -3,7 +3,7 @@
     class="page content-layout-container"
     :class="{
       'full-width': $frontmatter.fullWidthPage,
-      'isInConsole': isInConsole
+      isInConsole: isInConsole
     }"
   >
     <slot name="top" />
@@ -14,11 +14,13 @@
         <slot name="breadcrumb"></slot>
         <Content class="theme-default-content" />
         <downloadDemoPage v-if="showDownloadDemo" />
+        <ClientOnly>
+          <Feedback v-if="!$page.frontmatter.noFeedback" />
+        </ClientOnly>
         <PageNav
           v-show="!$page.frontmatter.noPageNav"
           v-bind="{ sidebarItems }"
         />
-        <Feedback v-if="!$page.frontmatter.noFeedback" />
       </div>
       <div v-if="!$page.frontmatter.noToc" class="on-this-page">
         <OnThisPage :isInConsole="isInConsole" />
@@ -27,19 +29,19 @@
         <DownloadDemo />
       </div>
     </div>
-    <PageEdit />
+    <!-- <PageEdit /> -->
 
     <slot name="bottom" />
   </main>
 </template>
 
 <script>
-import PageEdit from '@theme/components/PageEdit.vue'
-import PageNav from '@theme/components/PageNav.vue'
-import OnThisPage from '@theme/components/OnThisPage.vue'
-import Feedback from '@theme/components/Feedback.vue'
-import DownloadDemo from '@theme/components/DownloadDemo'
-import DownloadDemoPage from '@theme/components/DownloadDemo/DownloadDemoPage'
+import PageEdit from "@theme/components/PageEdit.vue";
+import PageNav from "@theme/components/PageNav.vue";
+import OnThisPage from "@theme/components/OnThisPage.vue";
+import Feedback from "@theme/components/Feedback.vue";
+import DownloadDemo from "@theme/components/DownloadDemo";
+import DownloadDemoPage from "@theme/components/DownloadDemo/DownloadDemoPage";
 
 export default {
   components: {
@@ -50,15 +52,15 @@ export default {
     DownloadDemo,
     DownloadDemoPage
   },
-  props: ['sidebarItems', 'isInConsole'],
+  props: ["sidebarItems", "isInConsole"],
   computed: {
     showDownloadDemo() {
-      const download = this.$frontmatter.downloadDemo
+      const download = this.$frontmatter.downloadDemo;
 
-      return !!(download && (download.downloadUrl || download.jumpUrl))
+      return !!(download && (download.downloadUrl || download.jumpUrl));
     }
   }
-}
+};
 </script>
 
 <style lang="stylus">
@@ -82,7 +84,6 @@ export default {
     padding-left 0
     .breadcrumb-content-container
       margin 0
-    .feedback
       max-width $mainContentWidthWithSideBar
       margin 0 auto
   .main-content

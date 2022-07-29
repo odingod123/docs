@@ -1,14 +1,14 @@
 <template>
   <main
-    class="page content-layout-container"
+    class="page content-layout-container reference-new"
     :class="{
-      'full-width': $frontmatter.fullWidthPage,
+      'full-width': $frontmatter.fullWidthPage
     }"
   >
     <slot name="top" />
 
     <div class="main-content">
-      <slot name="sidebar"></slot>
+      <!-- <slot name="sidebar"></slot> -->
       <div class="breadcrumb-content-container">
         <slot name="breadcrumb"></slot>
         <div class="sdk-banner">
@@ -43,7 +43,7 @@
         <div class="sdk-content">
           <div v-for="cat of $frontmatter.data">
             <h2 :id="cat.title">
-              <a :href="`#${cat.title}`" class="header-anchor">¶</a>
+              <a :href="`#${cat.title}`" class="header-anchor"></a>
               {{ cat.title }}
             </h2>
             <p>
@@ -55,13 +55,13 @@
           </div>
         </div>
         <!-- <Content class="theme-default-content" /> -->
-        <downloadDemoPage v-if="showDownloadDemo" />
-        <Feedback v-if="!$frontmatter.noFeedback" />
+        <!-- <downloadDemoPage v-if="showDownloadDemo" /> -->
+        <!-- <Feedback v-if="!$frontmatter.noFeedback" /> -->
       </div>
       <div v-if="!$frontmatter.noToc" class="on-this-page">
         <OnThisPage
           :items="
-            $frontmatter.data.map((cat) => {
+            $frontmatter.data.map(cat => {
               cat.slug = cat.title;
               return cat;
             })
@@ -82,7 +82,7 @@
 import PageEdit from "@theme/components/PageEdit.vue";
 import PageNav from "@theme/components/PageNav.vue";
 import OnThisPage from "@theme/components/OnThisPage.vue";
-import Feedback from "@theme/components/Feedback.vue";
+// // import Feedback from "@theme/components/Feedback.vue";
 import DownloadDemo from "@theme/components/DownloadDemo";
 import DownloadDemoPage from "@theme/components/DownloadDemo/DownloadDemoPage";
 import SdkLink from "./SdkLink.vue";
@@ -92,25 +92,25 @@ export default {
     SdkLink,
     PageEdit,
     PageNav,
-    Feedback,
+    // Feedback,
     OnThisPage,
     DownloadDemo,
-    DownloadDemoPage,
+    DownloadDemoPage
   },
   computed: {
     showDownloadDemo() {
       const download = this.$frontmatter.downloadDemo;
 
       return !!(download && (download.downloadUrl || download.jumpUrl));
-    },
-  },
+    }
+  }
 };
 </script>
 
 <style lang="stylus">
 .sdk-banner
   color: #fff;
-  background: #215ae5 url('~@theme/assets/images/reference/sdk-mask.png') no-repeat left top;
+  background: $accentColor url('~@theme/assets/images/reference/sdk-mask.png') no-repeat left top;
   background-size: 470px 100%;
   position: relative;
   display: flex;
@@ -141,7 +141,7 @@ export default {
     font-size: 24px;
     line-height: 38px;
     color: #1D2129;
-    margin-top: 3em;
+    padding-top: 3em;
     padding-bottom: 0;
     border-bottom: 0
   p
@@ -180,7 +180,6 @@ export default {
     padding-left 0
     .breadcrumb-content-container
       margin 0
-    .feedback
       max-width $mainContentWidthWithSideBar
       margin 0 auto
   .main-content
